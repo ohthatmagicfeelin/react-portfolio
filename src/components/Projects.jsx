@@ -1,23 +1,26 @@
 import React from 'react';
+import ChatBotImage from '../../public/chatbot.png';
+import SpotifySeasonsImage from '../../public/spotify_project.png';
+import PropertyAppImage from '../../public/property_floodplain_project.png';
 
 function Projects() {
   const projects = [
     {
-      title: "Property Search App",
-      description: "An app for viewing Real Estate in my area.",
-      image: "/property_floodplain_project.png",
-      link: "/properties"
-    },
-    {
       title: "Spotify Seasons App",
       description: "An interactive app that analyzes your Spotify listening habits and creates seasonal playlists.",
-      image: "/spotify_project.png",
+      image: SpotifySeasonsImage,
       link: "/spotifyseasons"
+    },
+    {
+      title: "Property Search App",
+      description: "An app for viewing Real Estate in my area.",
+      image: PropertyAppImage,
+      link: "/properties"
     },
     {
       title: "Chat Bot App",
       description: "An LLM chatbot interface to develop features I think are missing from the current available LLM chatbots.",
-      image: "/chatbot_app.png",
+      image: ChatBotImage,
       link: "/chatbot"
     },
   ];
