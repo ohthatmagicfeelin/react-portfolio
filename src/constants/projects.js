@@ -1,6 +1,8 @@
 import ChatBotImage from '../assets/chatbot.png';
 import SpotifySeasonsImage from '../assets/spotify_project.png';
 import PropertyAppImage from '../assets/property_floodplain_project.png';
+import WeatherImage from '../assets/weather.png';
+
 
 
 export const projects = [
@@ -30,5 +32,14 @@ export const projects = [
       demoLink: "/chatbot",
       githubLink: "https://github.com/yourusername/chatbot",
       technologies: ["Python", "React", "TensorFlow", "FastAPI"]
+    },
+    {
+      title: "Weather History",
+      description: "A weather history app to log and view historical weather data for my home town.",
+      longDescription: "A weather history app that allows users to log and view historical weather data for their home town. Features include interactive maps, detailed weather information, and advanced filtering options.",
+      image: WeatherImage,
+      demoLink: "/weather",
+      githubLink: "https://github.com/yourusername/chatbot",
+      technologies: ["React", "Node.js", "puppeteer", "Express"]
     },
   ];
