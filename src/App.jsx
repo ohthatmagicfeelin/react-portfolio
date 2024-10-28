@@ -1,21 +1,35 @@
 import React from 'react';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import MainPage from './components/MainPage.jsx';
+import ProjectDetails from './components/ProjectDetails';
+import Footer from './components/Footer.jsx';
+import { projects } from './constants/projects.js';
+
+
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
-        <About />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <main className="container mx-auto px-4 py-8">
+          <Routes>
+
+            <Route path="/" element={
+              <MainPage projects={projects} />
+            } />
+
+            <Route 
+              path="/project-details/:projectPath" 
+              element={<ProjectDetails projects={projects} />} 
+            />
+
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
