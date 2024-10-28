@@ -66,14 +66,14 @@ function ProjectDetails({ projects }) {
             >
               Launch App
             </a>
-            <a 
+            {/* <a 
               href={project.githubLink} 
               className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
               View Code
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
