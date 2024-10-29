@@ -1,45 +1,47 @@
-import ChatBotImage from '../assets/chatbot.png';
-import SpotifySeasonsImage from '../assets/spotify_project.png';
-import PropertyAppImage from '../assets/property_floodplain_project.png';
-import WeatherImage from '../assets/weather.png';
-
-
+import ChatBotImage from '../assets/projectImages/chatbot.png';
+import SpotifySeasonsImage from '../assets/projectImages/spotify_project.png';
+import PropertyAppImage from '../assets/projectImages/property_floodplain_project.png';
+import WeatherImage from '../assets/projectImages/weather.png';
+import spotifyAppLongDescription from '../assets/descriptions/spotifyAppLongDescription.md?raw';
+import propertyMapLongDescription from '../assets/descriptions/propertyMapLongDescription.md?raw';
+import chatbotLongDescription from '../assets/descriptions/chatbotLongDescription.md?raw';
+import weatherLongDescription from '../assets/descriptions/weatherLongDescription.md?raw';
 
 export const projects = [
     {
       title: "Spotify Seasons App",
       description: "An interactive app that analyzes your Spotify listening habits and creates seasonal playlists.",
-      longDescription: "This application integrates with Spotify's API to analyze your listening patterns and automatically generates personalized playlists based on seasonal themes. Using advanced algorithms, it categorizes songs by their acoustic features and mood to match them with different seasons.",
+      longDescription: spotifyAppLongDescription,
       image: SpotifySeasonsImage,
       demoLink: "/spotifyseasons",
       githubLink: "https://github.com/yourusername/spotify-seasons",
-      technologies: ["React", "Node.js", "Spotify API", "Express"]
+      technologies: ["React", "Node.js", "Spotify API", "Express", "PostgreSQL", "N-tier Architecture", "TailwindCSS", "PWA", "Vite", "Nginx", "SSL", "VPS Deployment"],
     },
     {
       title: "Property Search App",
       description: "An app for viewing Real Estate in my area.",
-      longDescription: "A comprehensive real estate search platform that helps users find properties while providing detailed information about flood plains and other environmental factors. Features include interactive maps, detailed property information, and advanced filtering options.",
+      longDescription: propertyMapLongDescription,
       image: PropertyAppImage,
       demoLink: "/properties",
       githubLink: "https://github.com/yourusername/property-search",
-      technologies: ["React", "MongoDB", "Express", "Node.js"]
+      technologies: ["Vanilla JS", "Chart.js", "Leaflet.js", "Web Scraping", "VPS Deployment", "Static File Serving"]
     },
     {
       title: "Chat Bot App",
       description: "An LLM chatbot interface to develop features I think are missing from the current available LLM chatbots.",
-      longDescription: "A sophisticated chatbot platform built with advanced natural language processing capabilities. This project implements custom features such as context awareness, memory management, and specialized knowledge domains.",
+      longDescription: chatbotLongDescription,
       image: ChatBotImage,
       demoLink: "/chatbot",
       githubLink: "https://github.com/yourusername/chatbot",
-      technologies: ["Python", "React", "TensorFlow", "FastAPI"]
+      technologies: ["React", "Node.js", "Express", "PostgreSQL", "TailwindCSS", "PWA", "Vite", "Nginx", "SSL", "VPS Deployment", "Code Syntax Highlighting"]
     },
     {
       title: "Weather History",
       description: "A weather history app to log and view historical weather data for my home town.",
-      longDescription: "A weather history app that allows users to log and view historical weather data for their home town. Features include interactive maps, detailed weather information, and advanced filtering options.",
+      longDescription: weatherLongDescription,
       image: WeatherImage,
       demoLink: "/weather",
       githubLink: "https://github.com/yourusername/chatbot",
-      technologies: ["React", "Node.js", "puppeteer", "Express"]
+      technologies: ["React", "Node.js", "Express", "PostgreSQL", "TailwindCSS", "PWA", "Vite", "Nginx", "SSL", "VPS Deployment", "Puppeteer", "Jsdom", "Cron Jobs", "Web Scraping", "N-tier Architecture" ]
     },
   ];
