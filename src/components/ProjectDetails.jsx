@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 function ProjectDetails({ projects }) {
   const { projectPath } = useParams();
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
 
   const project = projects.find(p => p.demoLink === `/${projectPath}`);
-
+  
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -33,15 +35,32 @@ function ProjectDetails({ projects }) {
       </button>
       
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="w-full h-64 object-cover"
-        />
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="w-full h-64 object-cover transition-opacity duration-300"
+            style={{ opacity: isHovered ? '0.7' : '1' }}
+          />
+          {isHovered && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <a 
+                href={project.demoLink} 
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Launch App
+              </a>
+            </div>
+          )}
+        </div>
         
         <div className="p-8">
-          <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-          
           <div className="mb-6 flex flex-wrap gap-2">
             {project.technologies.map((tech, index) => (
               <span 
@@ -54,7 +73,7 @@ function ProjectDetails({ projects }) {
           </div>
 
           <div className="prose max-w-none">
-            <p className="text-gray-600 mb-6">{project.longDescription}</p>
+            <ReactMarkdown>{project.longDescription}</ReactMarkdown>
           </div>
 
           <div className="flex gap-4 mt-8">
@@ -66,14 +85,6 @@ function ProjectDetails({ projects }) {
             >
               Launch App
             </a>
-            {/* <a 
-              href={project.githubLink} 
-              className="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Code
-            </a> */}
           </div>
         </div>
       </div>
